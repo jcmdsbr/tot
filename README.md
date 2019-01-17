@@ -1,7 +1,6 @@
 ## TOT is a open-source project written in .NET Core :laughing:
-=====================
 
-The goal of this project is implement the most common used technologies.
+* The goal of this project is implement the most common used technologies.
 
 ## Give a Star! :star:
 If you liked the project, please give a star ;)
