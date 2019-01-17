@@ -5,7 +5,7 @@
 ## Give a Star! :star:
 If you liked the project, please give a star ;)
 
-### You need some of the fallowing tools :exclamation:
+## You need some of the fallowing tools :exclamation:
 
 * Visual Studio 2017
 * .Net Core 2.1
