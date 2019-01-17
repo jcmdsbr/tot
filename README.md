@@ -1,4 +1,4 @@
-## :bookmark_tabs:  TOT is a open-source project written in .NET Core
+## TOT is a open-source project written in .NET Core :laughing:
 =====================
 
 The goal of this project is implement the most common used technologies.
@@ -6,19 +6,16 @@ The goal of this project is implement the most common used technologies.
 ## Give a Star! :star:
 If you liked the project, please give a star ;)
 
-### :arrow_down: You need some of the fallowing tools:
+### You need some of the fallowing tools: :question:
 
-* Docker
 * Visual Studio 2017
 * .Net Core 2.1
 
-## :scissors: CQRS
+## :bulb: CQRS
 
 Segregation between Commands and Queries, with isolated databases and different models
 
-## :dart: Clean Architecture
-
-Here's the basic architecture usage
+## :bulb: Clean Architecture
 
 * Respecting policy rules, with dependencies always pointing inward
 * Separation of technology details from the rest of the system
