@@ -21,7 +21,7 @@ namespace Tot.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IReadOnlyCollection<GetGroupViewResponse>> List()
         {
-            var query = new GetGroupListQuery();
+            GetGroupListQuery query = new GetGroupListQuery();
 
             var result = await Bus.ExecuteQuery(query);
 

@@ -23,7 +23,7 @@ namespace Tot.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IReadOnlyCollection<GetFeedbackViewResponse>> List()
         {
-            var query = new GetFeedbackListQuery();
+            GetFeedbackListQuery query = new GetFeedbackListQuery();
 
             var result = await Bus.ExecuteQuery(query);
 
@@ -35,7 +35,7 @@ namespace Tot.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<GetFeedbackViewResponse> GetById(Guid id)
         {
-            var query = new GetFeedbackByIdQuery(id);
+            GetFeedbackByIdQuery query = new GetFeedbackByIdQuery(id);
 
             var result = await Bus.ExecuteQuery(query);
 
@@ -47,9 +47,9 @@ namespace Tot.Api.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult<CreateFeedbackResponse>> Create(CreateFeedbackRequest request)
         {
-            var command = new CreateFeedbackCommand(request.Description, request.GroupId);
+            CreateFeedbackCommand command = new CreateFeedbackCommand(request.Description, request.GroupId);
 
-            var cmdResult = await Bus.SendCommand(command);
+            CreateFeedbackCommandResult cmdResult = await Bus.SendCommand(command);
 
             return new CreateFeedbackResponse(cmdResult.Success, cmdResult.Message);
         }
