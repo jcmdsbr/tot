@@ -13,8 +13,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Application\Tot.Command\Tot.Command.csproj" />
-    <ProjectReference Include="..\..\Application\Tot.Core\Tot.Shared.csproj" />
     <ProjectReference Include="..\..\Application\Tot.Query\Tot.Query.csproj" />
+    <ProjectReference Include="..\..\Tot.Shared\Tot.Shared.csproj" />
     <ProjectReference Include="..\Tot.Infra.Bus\Tot.Infra.Bus.csproj" />
     <ProjectReference Include="..\Tot.Infra.Persistence\Tot.Infra.Persistence.csproj" />
   </ItemGroup>
