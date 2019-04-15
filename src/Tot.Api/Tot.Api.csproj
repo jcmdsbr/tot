@@ -20,10 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Tot.Command\Tot.Command.csproj" />
-    <ProjectReference Include="..\Tot.Infra.Bus\Tot.Infra.Bus.csproj" />
-    <ProjectReference Include="..\Tot.Infra.IoC\Tot.Infra.IoC.csproj" />
-    <ProjectReference Include="..\Tot.Query\Tot.Query.csproj" />
+    <ProjectReference Include="..\Core\Application\Tot.Command\Tot.Command.csproj" />
+    <ProjectReference Include="..\Core\Application\Tot.Query\Tot.Query.csproj" />
+    <ProjectReference Include="..\Core\Infra\Tot.Infra.Bus\Tot.Infra.Bus.csproj" />
+    <ProjectReference Include="..\Core\Infra\Tot.Infra.IoC\Tot.Infra.IoC.csproj" />
   </ItemGroup>
 
 </Project>

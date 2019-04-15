@@ -22,7 +22,7 @@ namespace Tot.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(options =>
                 {
                     options.SerializerSettings.Converters.Add(new StringEnumConverter());
@@ -36,7 +36,7 @@ namespace Tot.Api
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
 
-            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info { Title = "Tot API", Version = "v1" }); });
+            services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new Info {Title = "Tot API", Version = "v1"}); });
 
             services.RegisterDependencies(Configuration);
         }

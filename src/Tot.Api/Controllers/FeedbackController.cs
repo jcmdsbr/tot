@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Tot.Api.Models;
 using Tot.Command.Commands;
 using Tot.Infra.Bus;
@@ -19,11 +19,11 @@ namespace Tot.Api.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(List<GetFeedbackViewResponse>), (int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(List<GetFeedbackViewResponse>), (int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
         public async Task<IReadOnlyCollection<GetFeedbackViewResponse>> List()
         {
-            GetFeedbackListQuery query = new GetFeedbackListQuery();
+            var query = new GetFeedbackListQuery();
 
             var result = await Bus.ExecuteQuery(query);
 
@@ -31,11 +31,11 @@ namespace Tot.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(GetFeedbackViewResponse), (int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(GetFeedbackViewResponse), (int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
         public async Task<GetFeedbackViewResponse> GetById(Guid id)
         {
-            GetFeedbackByIdQuery query = new GetFeedbackByIdQuery(id);
+            var query = new GetFeedbackByIdQuery(id);
 
             var result = await Bus.ExecuteQuery(query);
 
@@ -43,13 +43,13 @@ namespace Tot.Api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(CreateFeedbackResponse), (int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(CreateFeedbackResponse), (int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
         public async Task<ActionResult<CreateFeedbackResponse>> Create(CreateFeedbackRequest request)
         {
-            CreateFeedbackCommand command = new CreateFeedbackCommand(request.Description, request.GroupId);
+            var command = new CreateFeedbackCommand(request.Description, request.GroupId);
 
-            CreateFeedbackCommandResult cmdResult = await Bus.SendCommand(command);
+            var cmdResult = await Bus.SendCommand(command);
 
             return new CreateFeedbackResponse(cmdResult.Success, cmdResult.Message);
         }
