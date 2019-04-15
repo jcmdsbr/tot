@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tot.Command", "src\Core\Application\Tot.Command\Tot.Command.csproj", "{976DFA49-A46F-4C09-8DEF-8BC9673B15AE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tot.Shared", "src\Core\Application\Tot.Core\Tot.Shared.csproj", "{F4C29A93-E897-4F71-B814-5D621B3C8CBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tot.Shared", "src\Core\Tot.Shared\Tot.Shared.csproj", "{F4C29A93-E897-4F71-B814-5D621B3C8CBD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tot.Query", "src\Core\Application\Tot.Query\Tot.Query.csproj", "{F0CBDCA6-320C-44C9-A390-EF43FEC2E505}"
 EndProject
