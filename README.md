@@ -7,8 +7,8 @@ If you liked the project, please give a star ;)
 
 ## You need some of the fallowing tools :exclamation:
 
-* Visual Studio 2017
-* .Net Core 2.1
+* Visual Studio 2017/2019 or Visual Studio Code
+* .Net Core 2.2
 
 ## CQRS :heavy_check_mark:
 
