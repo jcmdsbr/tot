@@ -19,13 +19,13 @@ namespace Tot.Api.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(List<GetGroupViewResponse>), (int) HttpStatusCode.OK)]
         [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
-        public async Task<IReadOnlyCollection<GetGroupViewResponse>> List()
+        public async Task<IEnumerable<GetGroupViewResponse>> List()
         {
             var query = new GetGroupListQuery();
 
             var result = await Bus.ExecuteQuery(query);
 
-            return result.Select(x => new GetGroupViewResponse(x.Id, x.Description)).ToList();
+            return result.Select(x => new GetGroupViewResponse(x.Id, x.Description));
         }
     }
 }

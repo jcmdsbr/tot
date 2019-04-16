@@ -21,13 +21,13 @@ namespace Tot.Api.Controllers
         [HttpGet]
         [ProducesResponseType(typeof(List<GetFeedbackViewResponse>), (int) HttpStatusCode.OK)]
         [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
-        public async Task<IReadOnlyCollection<GetFeedbackViewResponse>> List()
+        public async Task<IEnumerable<GetFeedbackViewResponse>> List()
         {
             var query = new GetFeedbackListQuery();
 
             var result = await Bus.ExecuteQuery(query);
 
-            return result.Select(x => new GetFeedbackViewResponse(x.Description, x.GroupId)).ToList();
+            return result.Select(x => new GetFeedbackViewResponse(x.Description, x.GroupId));
         }
 
         [HttpGet("{id}")]
