@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+      - echo logging in to AWS ECR...
+      - $(aws ecr get-login --no-include-email --region us-east-2)
+  build:
+    commands:
+      - echo build Docker image on `date`
+      - docker build -t tot .
+      - docker tag tot:latest <your.ecr.amazonws/image>:latest
+  post_build:
+    commands:
+      - docker push <your.ecr.amazonws/image:lastest>
