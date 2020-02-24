@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace Tot.Infra.Persistence.Migrations
 {
@@ -67,7 +67,7 @@ namespace Tot.Infra.Persistence.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Role", x => new {x.collaborator_id, x.group_id});
+                    table.PrimaryKey("PK_Role", x => new { x.collaborator_id, x.group_id });
                     table.ForeignKey(
                         "FK_Role_Collaborator_collaborator_id",
                         x => x.collaborator_id,

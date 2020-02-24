@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Tot.Api.Models;
 using Tot.Command.Commands;
 using Tot.Infra.Bus;
@@ -19,8 +19,8 @@ namespace Tot.Api.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(List<GetFeedbackViewResponse>), (int) HttpStatusCode.OK)]
-        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(List<GetFeedbackViewResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IEnumerable<GetFeedbackViewResponse>> List()
         {
             var query = new GetFeedbackListQuery();
@@ -31,8 +31,8 @@ namespace Tot.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(GetFeedbackViewResponse), (int) HttpStatusCode.OK)]
-        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(GetFeedbackViewResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<GetFeedbackViewResponse> GetById(Guid id)
         {
             var query = new GetFeedbackByIdQuery(id);
@@ -43,8 +43,8 @@ namespace Tot.Api.Controllers
         }
 
         [HttpPost]
-        [ProducesResponseType(typeof(CreateFeedbackResponse), (int) HttpStatusCode.OK)]
-        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(CreateFeedbackResponse), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult<CreateFeedbackResponse>> Create(CreateFeedbackRequest request)
         {
             var command = new CreateFeedbackCommand(request.Description, request.GroupId);

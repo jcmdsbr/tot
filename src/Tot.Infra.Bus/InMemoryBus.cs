@@ -1,5 +1,5 @@
-﻿using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
+using System.Threading.Tasks;
 using Tot.Shared.Commands;
 using Tot.Shared.Queries;
 

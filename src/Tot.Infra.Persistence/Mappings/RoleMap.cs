@@ -10,7 +10,7 @@ namespace Tot.Infra.Persistence.Mappings
         {
             builder.ToTable("Role", "dbo");
 
-            builder.HasKey(u => new {u.CollaboratorId, u.GroupId});
+            builder.HasKey(u => new { u.CollaboratorId, u.GroupId });
 
             builder.Property(u => u.CollaboratorId)
                 .HasColumnName("collaborator_id")

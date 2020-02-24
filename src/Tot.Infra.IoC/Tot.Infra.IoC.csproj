@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tot.Command\Tot.Command.csproj" />
+    <ProjectReference Include="..\Tot.Infra.Bus\Tot.Infra.Bus.csproj" />
+    <ProjectReference Include="..\Tot.Infra.Persistence\Tot.Infra.Persistence.csproj" />
+    <ProjectReference Include="..\Tot.Query\Tot.Query.csproj" />
+    <ProjectReference Include="..\Tot.Shared\Tot.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

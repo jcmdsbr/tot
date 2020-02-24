@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Tot.Api.Models;
 using Tot.Infra.Bus;
 using Tot.Query.Queries.Groups;
@@ -17,8 +17,8 @@ namespace Tot.Api.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(typeof(List<GetGroupViewResponse>), (int) HttpStatusCode.OK)]
-        [ProducesResponseType((int) HttpStatusCode.InternalServerError)]
+        [ProducesResponseType(typeof(List<GetGroupViewResponse>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IEnumerable<GetGroupViewResponse>> List()
         {
             var query = new GetGroupListQuery();
