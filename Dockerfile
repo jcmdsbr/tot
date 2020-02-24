@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:2.2-sdk-alpine AS build
+FROM microsoft/dotnet:3.1 AS build
 WORKDIR /tot
 
 COPY *.sln ./
@@ -11,7 +11,7 @@ RUN dotnet build -c Release && \
 dotnet test --verbosity=normal --results-directory /TestResults/ --logger:trx && \
 dotnet publish -c Release -o /app
 
-FROM microsoft/dotnet:2.2-aspnetcore-runtime
+FROM microsoft/dotnet:3.1-aspnetcore-runtime
 WORKDIR /app
 EXPOSE 80
 COPY --from=build /app .
