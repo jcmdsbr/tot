@@ -7,8 +7,8 @@ If you liked the project, please give a star ;)
 
 ## You need some of the fallowing tools :exclamation:
 
-* Visual Studio 2019 or Visual Studio Code
-* .Net Core 3.1
+- Visual Studio 2019 or Visual Studio Code
+- .Net Core 3.1
 
 ## CQRS :heavy_check_mark:
 
@@ -16,7 +16,7 @@ Segregation between Commands and Queries, with isolated databases and different 
 
 ## Clean Architecture :heavy_check_mark:
 
-* Respecting policy rules, with dependencies always pointing inward
-* Separation of technology details from the rest of the system
-* SOLID
-* Single responsibility of each layer
+- Respecting policy rules, with dependencies always pointing inward
+- Separation of technology details from the rest of the system
+- SOLID
+- Single responsibility of each layer
